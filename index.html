@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Final Tecnologia 4U</title>
+    <title>SecurPark Automation Tech - Proyecto Final</title>
     <style>
         * {
             margin: 0;
@@ -19,21 +19,20 @@
             line-height: 1.6;
             min-height: 100vh;
             position: relative;
-            overflow-x: hidden; /* Evita barras de desplazamiento laterales por las luces */
+            overflow-x: hidden;
         }
 
-        /* Figuras de luces difuminadas (Efecto idéntico a tu imagen de referencia) */
+        /* Figuras de luces difuminadas (Inspiradas en tu imagen de referencia) */
         .background-glows {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            pointer-events: none; /* Para que no molesten al hacer clic en la página */
+            pointer-events: none;
             z-index: -1;
         }
 
-        /* Luz roja intensa arriba a la izquierda */
         .glow-1 {
             position: absolute;
             top: -10%;
@@ -45,7 +44,6 @@
             filter: blur(80px);
         }
 
-        /* Luz roja/naranja brillante abajo a la derecha */
         .glow-2 {
             position: absolute;
             bottom: -15%;
@@ -57,7 +55,6 @@
             filter: blur(90px);
         }
 
-        /* Sutil destello magenta/morado en el centro-izquierdo para dar profundidad */
         .glow-3 {
             position: absolute;
             top: 40%;
@@ -74,7 +71,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: rgba(10, 3, 12, 0.8);
+            background-color: rgba(10, 3, 12, 0.85);
             backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
@@ -84,10 +81,11 @@
         }
 
         .logo {
-            font-size: 1.4rem;
+            font-size: 1.3rem;
             font-weight: bold;
             color: #ff4b6e;
             text-shadow: 0 0 12px rgba(255, 75, 110, 0.5);
+            letter-spacing: 0.5px;
         }
 
         nav a {
@@ -103,21 +101,22 @@
         }
 
         .hero {
-            height: 95vh;
+            min-height: 95vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
+            padding: 120px 20px 60px 20px;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 20px;
+            font-size: 3rem;
+            margin-bottom: 15px;
             color: #ffffff;
+            max-width: 900px;
         }
 
         .hero h1 span {
@@ -125,11 +124,19 @@
             text-shadow: 0 0 25px rgba(255, 75, 110, 0.6);
         }
 
+        .hero h2 {
+            font-size: 1.4rem;
+            color: #e2e8f0;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
         .hero p {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: #cbd5e1;
-            max-width: 650px;
+            max-width: 750px;
             margin-bottom: 35px;
+            line-height: 1.7;
         }
 
         .btn {
@@ -152,7 +159,7 @@
         }
 
         .section-container {
-            padding: 90px 8%;
+            padding: 80px 8%;
             text-align: center;
             background: rgba(14, 4, 18, 0.55);
             backdrop-filter: blur(10px);
@@ -212,7 +219,7 @@
 </head>
 <body>
 
-    <!-- Figuras de luces difuminadas de fondo (Estilo imagen de referencia) -->
+    <!-- Fondo con figuras difuminadas -->
     <div class="background-glows">
         <div class="glow-1"></div>
         <div class="glow-2"></div>
@@ -221,7 +228,7 @@
 
     <!-- Menú de navegación -->
     <header>
-        <div class="logo">SecuriLine</div>
+        <div class="logo">SecurPark Automation Tech</div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#podcast">Podcast</a>
@@ -233,16 +240,16 @@
 
     <!-- Inicio / Hero -->
     <section id="inicio" class="hero">
-        <h1>Desarrolladores de Sistemas de Seguridad <span>SecuriLine</span></h1>
-        <h2> ¿Cómo funciona? </h2>
-        <p>Explora a continuación nuestros sistemas diseñados para optimizar la seguridad en el IRTRA Petapa. ¿Cómo funciona? Si una persona vulnera el perímetro de seguridad establecido en la fila del juego mecánico, el sensor ultrasónico detecta la intrusión y activa de forma inmediata una alerta compuesta por un LED rojo intermitente y un zumbador de alta frecuencia; este sistema de advertencia permanece activo hasta que el operador del parque verifica la zona y presiona el botón físico de rearme para restablecer la operación normal.</p>
+        <h1>Soluciones Inteligentes con <span>SecurPark Automation Tech</span></h1>
+        <h2>¿Cómo funciona nuestro sistema de seguridad?</h2>
+        <p>Implementamos tecnología avanzada para optimizar la seguridad en zonas restringidas del IRTRA Petapa. Si una persona se acerca demasiado a un área de peligro, el sistema la detecta al instante activando una alerta visual (luz roja) y sonora. La alarma se mantiene activa hasta que un operador interviene directamente en el panel para restablecer la normalidad.</p>
         <a href="#podcast" class="btn">Comenzar a explorar</a>
     </section>
 
     <!-- Sección 1: Podcast -->
     <section id="podcast" class="section-container">
         <h2>Podcast del Proyecto</h2>
-        <p class="section-desc">Escucha la explicación detallada y el análisis de nuestro trabajo.</p>
+        <p class="section-desc">Escucha la explicación detallada y el análisis técnico de nuestra propuesta.</p>
         <div style="max-width: 600px; margin: 0 auto;">
             <audio controls style="width: 100%; border-radius: 30px;">
                 <source src="tu-audio.mp3" type="audio/mpeg">
@@ -254,7 +261,7 @@
     <!-- Sección 2: Infografía en PDF -->
     <section id="infografia" class="section-container">
         <h2>Infografía Informativa</h2>
-        <p class="section-desc">Visualiza o descarga nuestra infografía esquemática en formato PDF.</p>
+        <p class="section-desc">Visualiza o descarga nuestra infografía esquemática sobre la arquitectura del sistema.</p>
         <div>
             <a href="infografia.pdf" target="_blank" class="btn">📄 Ver Infografía en PDF</a>
         </div>
@@ -263,7 +270,7 @@
     <!-- Sección 3: Word de Investigación -->
     <section id="investigacion" class="section-container">
         <h2>Documento de Investigación</h2>
-        <p class="section-desc">Consulta el marco teórico e investigativo que fundamenta nuestro proyecto.</p>
+        <p class="section-desc">Consulta el marco teórico y la investigación que fundamentan este desarrollo tecnológico.</p>
         <div>
             <a href="investigacion.docx" class="btn" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);">📥 Descargar Investigación (Word)</a>
         </div>
@@ -272,16 +279,15 @@
     <!-- Sección 4: Video del Circuito Virtual -->
     <section id="circuito" class="section-container">
         <h2>Demostración del Circuito Virtual</h2>
-        <p class="section-desc">Observa la simulación y el funcionamiento en video del circuito implementado.</p>
+        <p class="section-desc">Observa la simulación en funcionamiento del prototipo automatizado.</p>
         <div class="video-container">
-            <!-- Cambia el link por el de tu video de YouTube -->
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Circuito" allowfullscreen></iframe>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Proyecto Final de TICS - Presentado en GitHub Pages y Teams.</p>
+        <p>SecurPark Automation Tech &copy; 2026 - Proyecto Final de Tecnología</p>
     </footer>
 
 </body>
