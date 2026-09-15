@@ -151,6 +151,7 @@
             cursor: pointer;
             display: inline-block;
             box-shadow: 0 4px 20px rgba(255, 42, 95, 0.4);
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -204,7 +205,7 @@
 
         /* Contenedor del visor PDF integrado */
         .pdf-viewer-container {
-            display: none; /* Oculto por defecto */
+            display: none;
             margin-top: 30px;
             width: 100%;
             max-width: 900px;
@@ -279,21 +280,21 @@
     <!-- Sección 2: Infografía en PDF Interactiva -->
     <section id="infografia" class="section-container">
         <h2>Infografía Informativa</h2>
-        <p class="section-desc" id="infografia-desc">Visualiza nuestra infografía esquemática sobre la arquitectura del sistema directamente en la página.</p>
+        <p class="section-desc">Visualiza nuestra infografía esquemática sobre la arquitectura del sistema directamente en la página.</p>
         
         <!-- Botones de control -->
         <div id="botones-infografia">
             <button onclick="mostrarInfografia()" class="btn">📄 Ver Infografía</button>
         </div>
 
-        <!-- Contenedor donde se despliega el PDF (Oculto al inicio) -->
+        <!-- Contenedor donde se despliega el PDF -->
         <div id="visorPDF" class="pdf-viewer-container">
             <iframe id="pdfFrame" src="" type="application/pdf"></iframe>
         </div>
 
-        <!-- Botón de Volver (Oculto al inicio, aparece cuando se abre el PDF) -->
+        <!-- Botón de Volver (Mantiene el mismo estilo y tamaño .btn) -->
         <div id="contenedorVolver" style="display: none; margin-top: 25px;">
-            <button onclick="ocultarInfografia()" class="btn" style="background: linear-gradient(135deg, #475569, #1e293b); box-shadow: 0 4px 20px rgba(71, 85, 105, 0.4);">↩️ Volver / Cerrar Infografía</button>
+            <button onclick="ocultarInfografia()" class="btn">↩️ Volver / Cerrar Infografía</button>
         </div>
     </section>
 
@@ -326,23 +327,19 @@
     <!-- Script para alternar la infografía -->
     <script>
         function mostrarInfografia() {
-            const pdfUrl = "Infografia-IRTRA-Petapa.pdf"; // Cambia esto si tu archivo tiene otro nombre
+            const pdfUrl = "Infografia-IRTRA-Petapa.pdf";
             document.getElementById('pdfFrame').src = pdfUrl;
             
-            // Ocultar botón de ver y mostrar el visor junto con el botón de volver
             document.getElementById('botones-infografia').style.display = 'none';
             document.getElementById('visorPDF').style.display = 'block';
             document.getElementById('contenedorVolver').style.display = 'block';
             
-            // Opcional: hacer scroll sutil hacia el visor para una mejor experiencia visual
             document.getElementById('visorPDF').scrollIntoView({ behavior: 'smooth' });
         }
 
         function ocultarInfografia() {
-            // Limpiar la fuente para detener la carga del PDF
             document.getElementById('pdfFrame').src = '';
             
-            // Ocultar el visor y el botón de volver, y mostrar de nuevo el botón original
             document.getElementById('visorPDF').style.display = 'none';
             document.getElementById('contenedorVolver').style.display = 'none';
             document.getElementById('botones-infografia').style.display = 'block';
