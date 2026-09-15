@@ -12,13 +12,14 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Fondo Animado con degradados en movimiento */
+        /* Fondo exacto inspirado en tu imagen (Rojo intenso, morado nocturno y negro azulado) con movimiento suave */
         body {
-            background: linear-gradient(-45deg, #070b19, #0f172a, #1e1b4b, #030712);
+            background: linear-gradient(135deg, #120208 0%, #1a0b2e 35%, #05020a 70%, #1f0404 100%);
             background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            animation: gradientBG 18s ease infinite;
             color: #f3f4f6;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         @keyframes gradientBG {
@@ -32,23 +33,24 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: rgba(15, 23, 42, 0.85);
-            backdrop-filter: blur(10px);
+            background-color: rgba(18, 2, 8, 0.85);
+            backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 75, 110, 0.15);
         }
 
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #38bdf8;
+            color: #ff4b6e; /* Tono rojo/rosa elegante */
+            text-shadow: 0 0 10px rgba(255, 75, 110, 0.4);
         }
 
         nav a {
-            color: #94a3b8;
+            color: #cbd5e1;
             text-decoration: none;
             margin-left: 20px;
             font-size: 0.95rem;
@@ -56,7 +58,7 @@
         }
 
         nav a:hover {
-            color: #38bdf8;
+            color: #ff4b6e;
         }
 
         .hero {
@@ -76,20 +78,21 @@
         }
 
         .hero h1 span {
-            color: #38bdf8;
-            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+            color: #ff4b6e;
+            text-shadow: 0 0 25px rgba(255, 75, 110, 0.6);
         }
 
         .hero p {
             font-size: 1.15rem;
-            color: #94a3b8;
+            color: #cbd5e1;
             max-width: 650px;
             margin-bottom: 35px;
         }
 
+        /* Botones combinados con el estilo de la imagen (rojo brillante a magenta) */
         .btn {
-            background: linear-gradient(135deg, #38bdf8, #0284c7);
-            color: #0b0f19;
+            background: linear-gradient(135deg, #ff2a5f, #b31238);
+            color: #ffffff;
             padding: 12px 30px;
             border-radius: 30px;
             font-weight: bold;
@@ -98,22 +101,24 @@
             border: none;
             cursor: pointer;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+            box-shadow: 0 4px 20px rgba(255, 42, 95, 0.4);
         }
 
         .btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
+            box-shadow: 0 6px 25px rgba(255, 42, 95, 0.6);
         }
 
         .section-container {
             padding: 90px 8%;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(5px);
-            margin: 20px 5%;
+            border-bottom: 1px solid rgba(255, 75, 110, 0.08);
+            background: rgba(20, 8, 22, 0.5); /* Semitransparente para que se filtre el fondo */
+            backdrop-filter: blur(8px);
+            margin: 30px 5%;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
         }
 
         .section-container h2 {
@@ -123,7 +128,7 @@
         }
 
         .section-desc {
-            color: #94a3b8;
+            color: #cbd5e1;
             margin-bottom: 40px;
             font-size: 1.1rem;
         }
@@ -137,9 +142,9 @@
             height: 0;
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: #1e293b;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 75, 110, 0.2);
+            background: #11050c;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
 
         .video-container iframe {
@@ -154,9 +159,9 @@
         footer {
             text-align: center;
             padding: 40px;
-            background-color: rgba(7, 9, 15, 0.9);
-            color: #64748b;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(5, 2, 7, 0.95);
+            color: #94a3b8;
+            border-top: 1px solid rgba(255, 75, 110, 0.1);
         }
     </style>
 </head>
@@ -207,7 +212,7 @@
         <h2>Documento de Investigación</h2>
         <p class="section-desc">Consulta el marco teórico e investigativo que fundamenta nuestro proyecto.</p>
         <div>
-            <a href="investigacion.docx" class="btn" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">📥 Descargar Investigación (Word)</a>
+            <a href="investigacion.docx" class="btn" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);">📥 Descargar Investigación (Word)</a>
         </div>
     </section>
 
@@ -226,7 +231,5 @@
         <p>Proyecto Final de TICS - Presentado en GitHub Pages y Teams.</p>
     </footer>
 
-</body>
-</html>
 </body>
 </html>
