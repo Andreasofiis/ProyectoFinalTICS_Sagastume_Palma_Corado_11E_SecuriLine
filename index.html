@@ -12,20 +12,61 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Fondo exacto inspirado en tu imagen (Rojo intenso, morado nocturno y negro azulado) con movimiento suave */
+        /* Fondo oscuro base */
         body {
-            background: linear-gradient(135deg, #120208 0%, #1a0b2e 35%, #05020a 70%, #1f0404 100%);
-            background-size: 400% 400%;
-            animation: gradientBG 18s ease infinite;
+            background-color: #05020a;
             color: #f3f4f6;
             line-height: 1.6;
             min-height: 100vh;
+            position: relative;
+            overflow-x: hidden; /* Evita barras de desplazamiento laterales por las luces */
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Figuras de luces difuminadas (Efecto idéntico a tu imagen de referencia) */
+        .background-glows {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Para que no molesten al hacer clic en la página */
+            z-index: -1;
+        }
+
+        /* Luz roja intensa arriba a la izquierda */
+        .glow-1 {
+            position: absolute;
+            top: -10%;
+            left: -10%;
+            width: 55vw;
+            height: 55vw;
+            background: radial-gradient(circle, rgba(230, 0, 50, 0.45) 0%, rgba(130, 0, 40, 0.15) 40%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+        }
+
+        /* Luz roja/naranja brillante abajo a la derecha */
+        .glow-2 {
+            position: absolute;
+            bottom: -15%;
+            right: -10%;
+            width: 60vw;
+            height: 60vw;
+            background: radial-gradient(circle, rgba(255, 30, 0, 0.4) 0%, rgba(180, 10, 40, 0.1) 50%, transparent 75%);
+            border-radius: 50%;
+            filter: blur(90px);
+        }
+
+        /* Sutil destello magenta/morado en el centro-izquierdo para dar profundidad */
+        .glow-3 {
+            position: absolute;
+            top: 40%;
+            left: 25%;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(80, 10, 80, 0.25) 0%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(100px);
         }
 
         header {
@@ -33,7 +74,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: rgba(18, 2, 8, 0.85);
+            background-color: rgba(10, 3, 12, 0.8);
             backdrop-filter: blur(12px);
             position: fixed;
             width: 100%;
@@ -45,8 +86,8 @@
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
-            color: #ff4b6e; /* Tono rojo/rosa elegante */
-            text-shadow: 0 0 10px rgba(255, 75, 110, 0.4);
+            color: #ff4b6e;
+            text-shadow: 0 0 12px rgba(255, 75, 110, 0.5);
         }
 
         nav a {
@@ -69,6 +110,8 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
@@ -89,7 +132,6 @@
             margin-bottom: 35px;
         }
 
-        /* Botones combinados con el estilo de la imagen (rojo brillante a magenta) */
         .btn {
             background: linear-gradient(135deg, #ff2a5f, #b31238);
             color: #ffffff;
@@ -112,13 +154,14 @@
         .section-container {
             padding: 90px 8%;
             text-align: center;
-            border-bottom: 1px solid rgba(255, 75, 110, 0.08);
-            background: rgba(20, 8, 22, 0.5); /* Semitransparente para que se filtre el fondo */
-            backdrop-filter: blur(8px);
-            margin: 30px 5%;
+            background: rgba(14, 4, 18, 0.55);
+            backdrop-filter: blur(10px);
+            margin: 40px 5%;
             border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.03);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 75, 110, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1;
         }
 
         .section-container h2 {
@@ -142,8 +185,8 @@
             height: 0;
             border-radius: 15px;
             overflow: hidden;
-            border: 1px solid rgba(255, 75, 110, 0.2);
-            background: #11050c;
+            border: 1px solid rgba(255, 75, 110, 0.25);
+            background: #0a020d;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
 
@@ -159,13 +202,22 @@
         footer {
             text-align: center;
             padding: 40px;
-            background-color: rgba(5, 2, 7, 0.95);
+            background-color: rgba(5, 2, 7, 0.9);
             color: #94a3b8;
             border-top: 1px solid rgba(255, 75, 110, 0.1);
+            position: relative;
+            z-index: 1;
         }
     </style>
 </head>
 <body>
+
+    <!-- Figuras de luces difuminadas de fondo (Estilo imagen de referencia) -->
+    <div class="background-glows">
+        <div class="glow-1"></div>
+        <div class="glow-2"></div>
+        <div class="glow-3"></div>
+    </div>
 
     <!-- Menú de navegación -->
     <header>
