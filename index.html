@@ -114,7 +114,7 @@
 
         .hero h1 {
             font-size: 3rem;
-            margin-bottom: 30px; /* Espacio extra añadido aquí */
+            margin-bottom: 30px; /* Espacio extra que pediste */
             color: #ffffff;
             max-width: 900px;
         }
@@ -188,8 +188,6 @@
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            padding-bottom: 56.25%;
-            height: 0;
             border-radius: 15px;
             overflow: hidden;
             border: 1px solid rgba(255, 75, 110, 0.25);
@@ -197,13 +195,11 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
 
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .video-container video {
             width: 100%;
-            height: 100%;
-            border: 0;
+            height: auto;
+            display: block;
+            border-radius: 15px;
         }
 
         footer {
@@ -276,12 +272,16 @@
         </div>
     </section>
 
-    <!-- Sección 4: Video del Circuito Virtual -->
+    <!-- Sección 4: Video del Circuito (Local MP4) -->
     <section id="circuito" class="section-container">
-        <h2>Demostración del Circuito Virtual</h2>
+        <h2>Demostración del Circuito Local</h2>
         <p class="section-desc">Observa la simulación en funcionamiento del prototipo automatizado.</p>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Circuito" allowfullscreen></iframe>
+            <!-- Cambia "circuito.mp4" por el nombre exacto de tu archivo de video -->
+            <video controls>
+                <source src="circuito.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de videos.
+            </video>
         </div>
     </section>
 
