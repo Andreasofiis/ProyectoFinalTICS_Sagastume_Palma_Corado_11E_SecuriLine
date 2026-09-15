@@ -282,28 +282,40 @@
         <h2>Infografía Informativa</h2>
         <p class="section-desc">Visualiza nuestra infografía esquemática sobre la arquitectura del sistema directamente en la página.</p>
         
-        <!-- Botones de control -->
+        <!-- Botón de control -->
         <div id="botones-infografia">
             <button onclick="mostrarInfografia()" class="btn">📄 Ver Infografía</button>
         </div>
 
-        <!-- Contenedor donde se despliega el PDF -->
+        <!-- Contenedor del visor PDF -->
         <div id="visorPDF" class="pdf-viewer-container">
             <iframe id="pdfFrame" src="" type="application/pdf"></iframe>
         </div>
 
-        <!-- Botón de Volver (Mantiene el mismo estilo y tamaño .btn) -->
+        <!-- Botón de Volver -->
         <div id="contenedorVolver" style="display: none; margin-top: 25px;">
             <button onclick="ocultarInfografia()" class="btn">↩️ Volver / Cerrar Infografía</button>
         </div>
     </section>
 
-    <!-- Sección 3: Word de Investigación -->
+    <!-- Sección 3: Documento de Investigación (PDF) Interactivo -->
     <section id="investigacion" class="section-container">
         <h2>Documento de Investigación</h2>
         <p class="section-desc">Consulta el marco teórico y la investigación que fundamentan este desarrollo tecnológico.</p>
-        <div>
-            <a href="investigacion.docx" class="btn" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);">📥 Descargar Investigación (Word)</a>
+        
+        <!-- Botón de control Investigación -->
+        <div id="botones-investigacion">
+            <button onclick="mostrarInvestigacion()" class="btn" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);">📖 Ver Documento de Investigación</button>
+        </div>
+
+        <!-- Contenedor del visor PDF para Investigación -->
+        <div id="visorInvestigacion" class="pdf-viewer-container" style="border-color: rgba(139, 92, 246, 0.35); box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(139, 92, 246, 0.15);">
+            <iframe id="investigacionFrame" src="" type="application/pdf"></iframe>
+        </div>
+
+        <!-- Botón de Volver Investigación -->
+        <div id="contenedorVolverInvestigacion" style="display: none; margin-top: 25px;">
+            <button onclick="ocultarInvestigacion()" class="btn" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);">↩️ Volver / Cerrar Documento</button>
         </div>
     </section>
 
@@ -324,7 +336,7 @@
         <p>SecurPark Automation Tech &copy; 2026 - Proyecto Final de Tecnología</p>
     </footer>
 
-    <!-- Script para alternar la infografía -->
+    <!-- Scripts de interacción -->
     <script>
         function mostrarInfografia() {
             const pdfUrl = "Infografia-IRTRA-Petapa.pdf";
@@ -343,6 +355,26 @@
             document.getElementById('visorPDF').style.display = 'none';
             document.getElementById('contenedorVolver').style.display = 'none';
             document.getElementById('botones-infografia').style.display = 'block';
+        }
+
+        function mostrarInvestigacion() {
+            // Reemplaza "investigacion.pdf" con el nombre real de tu archivo PDF de investigación
+            const pdfUrl = "Infografia-IRTRA-Petapa.pdf"; 
+            document.getElementById('investigacionFrame').src = pdfUrl;
+            
+            document.getElementById('botones-investigacion').style.display = 'none';
+            document.getElementById('visorInvestigacion').style.display = 'block';
+            document.getElementById('contenedorVolverInvestigacion').style.display = 'block';
+            
+            document.getElementById('visorInvestigacion').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function ocultarInvestigacion() {
+            document.getElementById('investigacionFrame').src = '';
+            
+            document.getElementById('visorInvestigacion').style.display = 'none';
+            document.getElementById('contenedorVolverInvestigacion').style.display = 'none';
+            document.getElementById('botones-investigacion').style.display = 'block';
         }
     </script>
 
