@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page - Proyecto Final TICS</title>
+    <title>Proyecto Final TICS - Landing Page</title>
     <style>
         * {
             margin: 0;
@@ -11,106 +11,137 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
+
+        /* Fondo Animado con degradados en movimiento */
         body {
-            background-color: #0b0f19;
+            background: linear-gradient(-45deg, #070b19, #0f172a, #1e1b4b, #030712);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: #f3f4f6;
             line-height: 1.6;
         }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background-color: rgba(15, 23, 42, 0.95);
+            background-color: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .logo {
             font-size: 1.4rem;
             font-weight: bold;
             color: #38bdf8;
         }
+
         nav a {
             color: #94a3b8;
             text-decoration: none;
-            margin-left: 15px;
+            margin-left: 20px;
             font-size: 0.95rem;
             transition: color 0.3s;
         }
+
         nav a:hover {
             color: #38bdf8;
         }
+
         .hero {
-            height: 90vh;
+            height: 95vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95));
         }
+
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
             color: #ffffff;
         }
+
         .hero h1 span {
             color: #38bdf8;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
         }
+
         .hero p {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: #94a3b8;
-            max-width: 600px;
-            margin-bottom: 30px;
+            max-width: 650px;
+            margin-bottom: 35px;
         }
+
         .btn {
-            background-color: #38bdf8;
+            background: linear-gradient(135deg, #38bdf8, #0284c7);
             color: #0b0f19;
-            padding: 12px 25px;
+            padding: 12px 30px;
             border-radius: 30px;
             font-weight: bold;
             text-decoration: none;
-            transition: transform 0.3s, background-color 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
         }
+
         .btn:hover {
-            background-color: #0ea5e9;
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
         }
+
         .section-container {
-            padding: 80px 8%;
+            padding: 90px 8%;
             text-align: center;
-            border-bottom: 1px solid #1e293b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(5px);
+            margin: 20px 5%;
+            border-radius: 20px;
         }
+
         .section-container h2 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             margin-bottom: 15px;
             color: #ffffff;
         }
+
         .section-desc {
             color: #94a3b8;
             margin-bottom: 40px;
             font-size: 1.1rem;
         }
-        /* Contenedor responsivo para el video de YouTube */
+
         .video-container {
             position: relative;
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
-            padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+            padding-bottom: 56.25%;
             height: 0;
-            border-radius: 12px;
+            border-radius: 15px;
             overflow: hidden;
-            border: 1px solid #334155;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             background: #1e293b;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -119,11 +150,13 @@
             height: 100%;
             border: 0;
         }
+
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #07090f;
+            padding: 40px;
+            background-color: rgba(7, 9, 15, 0.9);
             color: #64748b;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
     </style>
 </head>
@@ -131,7 +164,7 @@
 
     <!-- Menú de navegación -->
     <header>
-        <div class="logo">MiProyecto.tics</div>
+        <div class="logo">Proyecto TICS</div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#podcast">Podcast</a>
@@ -144,16 +177,16 @@
     <!-- Inicio / Hero -->
     <section id="inicio" class="hero">
         <h1>Landing Page de <span>Nuestro Proyecto</span></h1>
-        <p>Explora a continuación todos los productos y evidencias desarrolladas para la entrega oficial del proyecto final.</p>
-        <a href="#podcast" class="btn">Ver Secciones</a>
+        <p>Explora a continuación todos los productos, evidencias y multimedia desarrollados para nuestra entrega oficial.</p>
+        <a href="#podcast" class="btn">Comenzar a explorar</a>
     </section>
 
     <!-- Sección 1: Podcast -->
     <section id="podcast" class="section-container">
         <h2>Podcast del Proyecto</h2>
-        <p class="section-desc">Escucha nuestra explicación y análisis sobre el desarrollo del proyecto.</p>
+        <p class="section-desc">Escucha la explicación detallada y el análisis de nuestro trabajo.</p>
         <div style="max-width: 600px; margin: 0 auto;">
-            <audio controls style="width: 100%;">
+            <audio controls style="width: 100%; border-radius: 30px;">
                 <source src="tu-audio.mp3" type="audio/mpeg">
                 Tu navegador no soporta el elemento de audio.
             </audio>
@@ -163,8 +196,8 @@
     <!-- Sección 2: Infografía en PDF -->
     <section id="infografia" class="section-container">
         <h2>Infografía Informativa</h2>
-        <p class="section-desc">Visualiza o descarga nuestra infografía detallada en formato PDF.</p>
-        <div style="text-align: center;">
+        <p class="section-desc">Visualiza o descarga nuestra infografía esquemática en formato PDF.</p>
+        <div>
             <a href="infografia.pdf" target="_blank" class="btn">📄 Ver Infografía en PDF</a>
         </div>
     </section>
@@ -172,28 +205,28 @@
     <!-- Sección 3: Word de Investigación -->
     <section id="investigacion" class="section-container">
         <h2>Documento de Investigación</h2>
-        <p class="section-desc">Consulta el marco teórico e investigativo de nuestro trabajo.</p>
-        <div style="text-align: center;">
-            <a href="investigacion.docx" class="btn" style="background-color: #10b981; color: #fff;">📥 Descargar Documento de Investigación (Word)</a>
+        <p class="section-desc">Consulta el marco teórico e investigativo que fundamenta nuestro proyecto.</p>
+        <div>
+            <a href="investigacion.docx" class="btn" style="background: linear-gradient(135deg, #10b981, #059669); box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">📥 Descargar Investigación (Word)</a>
         </div>
     </section>
 
-    <!-- Sección 4: Video de Demostración del Circuito Virtual -->
+    <!-- Sección 4: Video del Circuito Virtual -->
     <section id="circuito" class="section-container">
         <h2>Demostración del Circuito Virtual</h2>
-        <p class="section-desc">Observa el funcionamiento y la simulación del circuito en acción.</p>
-        
-        <!-- Reproductor de Video de YouTube integrado -->
+        <p class="section-desc">Observa la simulación y el funcionamiento en video del circuito implementado.</p>
         <div class="video-container">
-            <!-- Reemplaza "dQw4w9WgXcQ" por el ID del enlace de tu video de YouTube -->
+            <!-- Cambia el link por el de tu video de YouTube -->
             <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Demostración de Circuito" allowfullscreen></iframe>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Proyecto Final de TICS - Presentado para la entrega oficial en GitHub Pages y Teams.</p>
+        <p>Proyecto Final de TICS - Presentado en GitHub Pages y Teams.</p>
     </footer>
 
+</body>
+</html>
 </body>
 </html>
